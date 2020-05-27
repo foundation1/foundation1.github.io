@@ -36,6 +36,7 @@ docker version
 ````
 7. 配置镜像加速器
 [阿里云](https://www.aliyun.com/tg/aliware/4829868.html "阿里云镜像加速器配置方法")
+![加速器](../img/docker-加速器.jpg)
 8. 查看加速器是否配置成功
 ````
 ps -ef|grep docker
