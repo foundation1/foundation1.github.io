@@ -7,7 +7,7 @@ categories: 'docker-安装'
 docker 需要运行在centos6.5以上，下面只适用于centos7+ 这里可以自行搜索官网进行安装
 #### Centos 查看版本号
 cat /etc/redhat-release
-#### 准备工作
+#### 准备工作11111
 1. 需要安装gcc与c++
 ````
 yum -y install gcc
