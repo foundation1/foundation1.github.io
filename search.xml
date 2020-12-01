@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>docker-命令</title>
-    <url>/2020/11/18/docker-%E5%91%BD%E4%BB%A4/</url>
+    <url>/2020/11/27/docker-%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<h4 id="docker-镜像命令"><a href="#docker-镜像命令" class="headerlink" title="docker 镜像命令"></a>docker 镜像命令</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker images [options] 查看镜像 options -q:只显示镜像id -a:列出本地所有镜像(含中间映像层) --digests:显示镜像的摘要信息 --no-trunc:显示完整的镜像信息</span><br><span class="line">docker run &lt;镜像名称&gt; 运行镜像如果没有会从远程仓库获取镜像</span><br><span class="line">docker search [options] 镜像名  optione说明: --no-trunc:显示完整的镜像描述 -s:列出收藏数不小于指定值的镜像 --auto mated: 列出automated build类型的镜像</span><br><span class="line">docker pull 镜像名称[:tag] tag:版本号默认为 latest(最新的) 下载镜像</span><br><span class="line">docker rmi [options] 删除镜像 options: -f 镜像id -f 镜像名:tag 镜像名2:tag -f</span><br></pre></td></tr></table></figure>
 <h4 id="容器命令"><a href="#容器命令" class="headerlink" title="容器命令"></a>容器命令</h4><pre><code>docker run [options] image [command][ARG..] option: --name 镜像名 -d 后台运行 -i交互模式运行 -t 为容器分配一个伪输入终端it通常都是一起使用 -P 随机端口 -p 指定端口 主机端口:镜像端口
 docker ps [options] options: -a:列出当前所有正在运行和历史上运行的容器 -l:显示最近创建的容器 -n:显示最近n个创建的容器 -q:只显示容器编号 --no-trunc:不截断输出
@@ -19,27 +19,15 @@ docker exec [-it] 容器id 命令 容器id 进入容器 启动新进程 命令:l
 docker attach 容器id 进入容器 不会产生新进程
 docker cp 容器id:容器内路径 目的主机路径</code></pre>]]></content>
       <categories>
-        <category>docker-命令</category>
+        <category>docker</category>
       </categories>
       <tags>
-        <tag>java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>docker-dockerFile</title>
-    <url>/2020/11/18/docker-%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<h4 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">FROM 基础镜像，当前新镜像是基于哪个镜像的</span><br><span class="line">MAINTAINER 镜像作者的姓名和邮箱地址</span><br><span class="line">RUN 容器构造时需要运行的命令</span><br><span class="line">EXPOSE 当前容器对外暴露的端口</span><br><span class="line">WORKDIR 进入容器时的文件目录</span><br><span class="line">ENV 什么变量</span><br><span class="line">ADD 拷贝文件并解压</span><br><span class="line">COPY 拷贝文件没有解压功能</span><br><span class="line">VOLUME 容器数据卷</span><br><span class="line">CMD 指定容器运行启动时运行的命令 可以指定多个，但最终只有最后一个有效</span><br><span class="line">ENTRYPOINT 容器启动时运行的命令 可以有多个 每个都有效</span><br><span class="line">ONBUILD 钩子函数 当其他容器继承他 并且build时执行</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>docker-dockerFile</category>
-      </categories>
-      <tags>
-        <tag>java</tag>
+        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
     <title>docker-安装</title>
-    <url>/2020/11/18/docker-%E5%AE%89%E8%A3%85/</url>
+    <url>/2020/11/27/docker-%E5%AE%89%E8%A3%85/</url>
     <content><![CDATA[<h4 id="Centos安装需求"><a href="#Centos安装需求" class="headerlink" title="Centos安装需求"></a>Centos安装需求</h4><p>docker 需要运行在centos6.5以上，下面只适用于centos7+ 这里可以自行搜索官网进行安装</p>
 <h4 id="Centos-查看版本号"><a href="#Centos-查看版本号" class="headerlink" title="Centos 查看版本号"></a>Centos 查看版本号</h4><p>cat /etc/redhat-release</p>
 <h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><ol>
@@ -55,15 +43,27 @@ docker cp 容器id:容器内路径 目的主机路径</code></pre>]]></content>
 </ol>
 ]]></content>
       <categories>
-        <category>docker-安装</category>
+        <category>docker</category>
       </categories>
       <tags>
-        <tag>java</tag>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>docker-dockerFile</title>
+    <url>/2020/11/27/docker-%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<h4 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">FROM 基础镜像，当前新镜像是基于哪个镜像的</span><br><span class="line">MAINTAINER 镜像作者的姓名和邮箱地址</span><br><span class="line">RUN 容器构造时需要运行的命令</span><br><span class="line">EXPOSE 当前容器对外暴露的端口</span><br><span class="line">WORKDIR 进入容器时的文件目录</span><br><span class="line">ENV 什么变量</span><br><span class="line">ADD 拷贝文件并解压</span><br><span class="line">COPY 拷贝文件没有解压功能</span><br><span class="line">VOLUME 容器数据卷</span><br><span class="line">CMD 指定容器运行启动时运行的命令 可以指定多个，但最终只有最后一个有效</span><br><span class="line">ENTRYPOINT 容器启动时运行的命令 可以有多个 每个都有效</span><br><span class="line">ONBUILD 钩子函数 当其他容器继承他 并且build时执行</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>docker</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
     <title>docker</title>
-    <url>/2020/11/18/docker/</url>
+    <url>/2020/11/27/docker/</url>
     <content><![CDATA[<h4 id="Docker-是什么"><a href="#Docker-是什么" class="headerlink" title="Docker 是什么"></a>Docker 是什么</h4><p>解决运行环境与配置问题软件容器，方便做持续集成并有助于整体发布的容器虚拟化技术</p>
 <h4 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h4><p>  docker 镜像(image)就是一个只读的模板，镜像可以用来创建多个docker 容器 一个镜像可以创建多个容器</p>
 <h4 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h4><p>  docker 容器是一个简易版的linux(只包含内核)</p>
@@ -119,19 +119,8 @@ docker cp 容器id:容器内路径 目的主机路径</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>java-基础</title>
-    <url>/2020/11/18/java-%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>java-基础</category>
-      </categories>
-      <tags>
-        <tag>java</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>es6</title>
-    <url>/2020/11/18/es6/</url>
+    <url>/2020/11/27/es6/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>es6</category>
@@ -141,8 +130,19 @@ docker cp 容器id:容器内路径 目的主机路径</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
+    <title>java-基础</title>
+    <url>/2020/11/27/java-%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>vue-基础</title>
-    <url>/2020/11/18/vue-%E5%9F%BA%E7%A1%80/</url>
+    <url>/2020/11/27/vue-%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>前端</category>
@@ -152,8 +152,21 @@ docker cp 容器id:容器内路径 目的主机路径</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
+    <title>莫名其妙-java</title>
+    <url>/2020/11/27/%E8%8E%AB%E5%90%8D%E5%85%B6%E5%A6%99-java/</url>
+    <content><![CDATA[<h4 id="nexus私服一直连接不上阿里云"><a href="#nexus私服一直连接不上阿里云" class="headerlink" title="nexus私服一直连接不上阿里云"></a>nexus私服一直连接不上阿里云</h4><p>原因是因为公司停电，重新启动nexus后一直连接不上阿里云，重新配置还是不行，最后重新启动nexus就行了,每次都需要重新启动两次。</p>
+<h3 id="hutool-工具"><a href="#hutool-工具" class="headerlink" title="hutool 工具"></a>hutool 工具</h3><p>BeanUtil.copyProperties  注意事项</p>
+]]></content>
+      <categories>
+        <category>莫名其妙-java</category>
+      </categories>
+      <tags>
+        <tag>莫名其妙-java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>jenkins</title>
-    <url>/2020/11/18/jenkins/</url>
+    <url>/2020/11/27/jenkins/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>jenkins</category>
@@ -163,15 +176,19 @@ docker cp 容器id:容器内路径 目的主机路径</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>莫名其妙-java</title>
-    <url>/2020/11/25/%E8%8E%AB%E5%90%8D%E5%85%B6%E5%A6%99-java/</url>
-    <content><![CDATA[<h4 id="nexus私服一直连接不上阿里云"><a href="#nexus私服一直连接不上阿里云" class="headerlink" title="nexus私服一直连接不上阿里云"></a>nexus私服一直连接不上阿里云</h4><p>原因是因为公司停电，重新启动nexus后一直连接不上阿里云，重新配置还是不行，最后重新启动nexus就行了,每次都需要重新启动两次。</p>
-]]></content>
+    <title>maven-依赖-工具</title>
+    <url>/2020/12/01/maven-%E4%BE%9D%E8%B5%96-%E5%B7%A5%E5%85%B7/</url>
+    <content><![CDATA[<h4 id="excel-解析"><a href="#excel-解析" class="headerlink" title="excel 解析"></a>excel 解析</h4><!-- https://mvnrepository.com/artifact/com.alibaba/easyexcel -->
+<dependency>
+    <groupId>com.alibaba</groupId>
+    <artifactId>easyexcel</artifactId>
+    <version>2.2.6</version>
+</dependency>]]></content>
       <categories>
-        <category>莫名其妙-java</category>
+        <category>maven</category>
       </categories>
       <tags>
-        <tag>java</tag>
+        <tag>maven</tag>
       </tags>
   </entry>
 </search>
