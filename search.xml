@@ -165,7 +165,8 @@ docker cp 容器id:容器内路径 目的主机路径</code></pre>]]></content>
   <entry>
     <title>莫名其妙-java</title>
     <url>/2020/11/25/%E8%8E%AB%E5%90%8D%E5%85%B6%E5%A6%99-java/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h4 id="nexus私服一直连接不上阿里云"><a href="#nexus私服一直连接不上阿里云" class="headerlink" title="nexus私服一直连接不上阿里云"></a>nexus私服一直连接不上阿里云</h4><p>原因是因为公司停电，重新启动nexus后一直连接不上阿里云，重新配置还是不行，最后重新启动nexus就行了,每次都需要重新启动两次。</p>
+]]></content>
       <categories>
         <category>莫名其妙-java</category>
       </categories>
